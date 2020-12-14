@@ -1,0 +1,25 @@
+﻿@model app.Models.Guitar
+@{
+    ViewBag.Title = "DeleteGuitar";
+}
+
+<div>
+    <table>
+        <tr>
+            <td>Model</td>
+            <td>Company</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+            <td>@Html.DisplayFor(model => model.Company)</td>
+        </tr>
+    </table>
+
+    <div>
+        <form asp-controller="Guitars" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Delete" />
+            </div>
+        </form>
+    </div>
+</div>

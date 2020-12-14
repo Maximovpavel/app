@@ -1,0 +1,27 @@
+﻿@model IEnumerable<app.Models.Guitar>
+@{
+    ViewBag.Title = "Guitars";
+}
+<h2><a asp-action="AddNewGuitar">Add a guitar</a></h2>
+<h3>Guitars</h3>
+<table>
+    <tr>
+        <td>Model</td>
+        <td>Company</td>
+        <td>Price</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach (var guitar in Model)
+    {
+        <tr>
+            <td>@guitar.Name</td>
+            <td>@guitar.Company</td>
+            <td>@guitar.Price</td>
+            <td><a href="~/Guitars/Buy/@guitar.Id">Buy</a></td>
+            <td><a asp-action="Edit" asp-controller="Guitars" asp-route-id="@guitar.Id">Edit</a></td>
+            <td><a asp-action="Delete" asp-controller="Guitars" asp-route-id="@guitar.Id">Delete</a></td>
+        </tr>
+    }
+</table>
